@@ -1,6 +1,8 @@
+import CalendarLayout from "./layouts/CalendarViewLayout";
+
 function App() {
     return (
-        <h1>Hello world</h1>
+        <CalendarLayout/>
     );
 }
 
