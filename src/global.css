@@ -1,3 +1,24 @@
+:root {
+    --color-bg-lighter:#eef5fb;
+    --color-bg-darker: #c5ddf2;
+    --color-bg: #d8e8f6;
+
+
+    --color-fg-lighter: #102546;
+    --color-fg-darker: #070f1d;
+    --color-fg: #0c1b33;
+
+    --color-accent-bg-lighter: #ffffff;
+    --color-accent-bg-darker: #e0ecf5;
+    --color-accent-bg: #f2f7fb;
+
+    --color-accent-fg-lighter: #f2978d;
+    --color-accent-fg-darker: #ec6d5f;
+    --color-accent-fg: #ef8275;
+
+    --color-accent-fg-disabled: #76818e;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -14,4 +35,24 @@ html {
 body {
     font-size: 1.6rem;
     padding: 0.5rem;
+
+    background: var(--color-bg);
+}
+
+h1 {
+    color: var(--color-fg-darker);
+}
+
+h2, h3, h4, h5, h6, p, span {
+    color: var(--color-fg);
+}
+
+a {
+    color: var(--color-accent-fg);
+    text-decoration: underline wavy;
+}
+
+a.disabled {
+    color: var(--color-accent-fg-disabled);
+    text-decoration: line-through solid;
 }
