@@ -51,8 +51,3 @@ a {
     color: var(--color-accent-fg);
     text-decoration: underline wavy;
 }
-
-a.disabled {
-    color: var(--color-accent-fg-disabled);
-    text-decoration: line-through solid;
-}
