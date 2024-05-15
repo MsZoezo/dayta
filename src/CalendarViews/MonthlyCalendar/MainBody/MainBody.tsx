@@ -7,10 +7,11 @@ interface Props{
 }
 
 function CalendarBody(props: Props) {
+    let {date} = props
     return (
         <div className="weekFormat">
-            <StartOfMonthBuffer FirstOfMonth={GetFirstDayOfWeek(props.date)}/>
-            {GetDateObjects(props.date)}
+            <StartOfMonthBuffer firstOfMonth={GetFirstDayOfWeek(date)}/>
+            {GetDateObjects(date)}
         </div>
     )
 }

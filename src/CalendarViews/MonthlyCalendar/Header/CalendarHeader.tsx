@@ -7,10 +7,11 @@ interface Props {
 
 
 function CalendarHeader(props: Props) {
+    let {date, changeMonthYear} = props
     return (<header id="DateHeader">
-        <a className={"MonthChanger"} onClick={() => props.changeMonthYear(-1)}>{"<"}</a>
-        <p>{props.date.toLocaleString(undefined,{month: "long", year:"numeric"})}</p>
-        <a className={"MonthChanger"} onClick={() => props.changeMonthYear(1)}>{">"}</a>
+        <a className={"MonthChanger"} onClick={() => changeMonthYear(-1)}>{"<"}</a>
+        <p>{date.toLocaleString(undefined,{month: "long", year:"numeric"})}</p>
+        <a className={"MonthChanger"} onClick={() => changeMonthYear(1)}>{">"}</a>
     </header>)
 }
 

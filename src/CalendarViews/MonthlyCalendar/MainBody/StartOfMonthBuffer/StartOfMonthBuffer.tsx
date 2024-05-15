@@ -1,11 +1,13 @@
 interface Props {
-    FirstOfMonth: number
+    firstOfMonth: number
 }
 
 function StartOfMonthBuffer(props: Props){
-    if (props.FirstOfMonth == 0) return <></>
+    let { firstOfMonth } = props
+    console.log(firstOfMonth)
+    if (firstOfMonth == 0) return <></>
     return (
-        <div id="StartOfMonthBuffer" style={{gridColumnEnd: props.FirstOfMonth + 1}}>
+        <div id="StartOfMonthBuffer" style={{gridColumnEnd: firstOfMonth + 1}}>
 
         </div>
     )

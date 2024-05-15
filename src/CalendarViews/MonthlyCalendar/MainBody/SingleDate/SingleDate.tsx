@@ -3,8 +3,9 @@ interface Props{
 }
 
 function SingleDate(props: Props){
+    let { date } = props
     return <h2 className="Date">
-        {props.date.getDate()}
+        {date.getDate()}
     </h2>
 }
 
