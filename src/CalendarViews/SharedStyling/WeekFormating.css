@@ -1,0 +1,5 @@
+.weekFormat {
+    display: grid;
+    grid-template-columns: calc(100% / 7) calc(100% / 7) calc(100% / 7) calc(100% / 7) calc(100% / 7) calc(100% / 7) calc(100% / 7);
+    justify-content: space-evenly;
+}
