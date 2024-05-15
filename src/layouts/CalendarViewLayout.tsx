@@ -1,3 +1,4 @@
+import MonthlyCalandar from "../CalendarViews/MonthlyCalendar/MonthlyCalendar";
 import ControlPanel from "../ControlPanel/ControlPanel";
 import "./CalendarViewLayout.css"
 
@@ -6,7 +7,7 @@ function CalendarLayout() {
         <div className="Layout">
             <ControlPanel/>
             <main>
-                <h1>This is the calendar</h1>
+                <MonthlyCalandar/>
             </main>
         </div>
     )
