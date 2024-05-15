@@ -1,5 +1,7 @@
 import { useState } from "react"
 import CalendarHeader from "./Header/CalendarHeader"
+import CalendarBody from "./MainBody/MainBody";
+import DayLabels from "../Components/DayLabels/DayLabels";
 
 function MonthlyCalandar() {
     let [date, setDate] = useState(new Date())
@@ -23,6 +25,8 @@ function MonthlyCalandar() {
     return (
         <>
             <CalendarHeader date={date} changeMonthYear={ChangeMonth} />
+            <DayLabels/>
+            <CalendarBody date={date}/>
         </>
     )
 }
