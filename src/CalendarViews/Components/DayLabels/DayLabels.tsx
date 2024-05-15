@@ -13,7 +13,7 @@ function DayLabels(){
 
 function GetDayName(dayIdx: number):string {
     const baseDate = 1
-    const workingDate = new Date(1970, 2)
+    const workingDate = new Date(1970, 2) //Just a random sunday
     workingDate.setDate(baseDate + dayIdx)
     return workingDate.toLocaleDateString(undefined, {weekday:"long"})
 }
