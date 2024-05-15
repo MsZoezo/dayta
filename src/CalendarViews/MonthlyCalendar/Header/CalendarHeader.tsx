@@ -5,7 +5,11 @@ interface Props {
     changeMonthYear: (a: number)=> void;
 }
 
-
+/**
+ * Creates the header for a monthly calendar
+ * @param props The information necessary to create the header
+ * @returns a JSX element for the header 
+ */
 function CalendarHeader(props: Props) {
     let {date, changeMonthYear} = props
     return (<header id="DateHeader">

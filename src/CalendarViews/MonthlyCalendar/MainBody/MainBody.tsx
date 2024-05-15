@@ -6,6 +6,11 @@ interface Props{
     date: Date
 }
 
+/**
+ * Creates the main body of a monthly calendar
+ * @param props The props used to recreate the element
+ * @returns A JSX copy of the body of the monthly view
+ */
 function CalendarBody(props: Props) {
     let {date} = props
     return (
@@ -16,12 +21,22 @@ function CalendarBody(props: Props) {
     )
 }
 
+/**
+ * Gets the first weekday of the month
+ * @param date The month + year used, wrapped in a date object
+ * @returns A number representing the weekday of the first day in the month,
+ * per Date object format
+ */
 function GetFirstDayOfWeek(date: Date):number {
     let tempDate = new Date(date)
     tempDate.setDate(1)
     return tempDate.getDay();
 }
-
+/**
+ * Gets the last date of the month
+ * @param date The month + year used, wrapped in a date object
+ * @returns The number of the last date of the month
+ */
 function GetLastDate(date: Date):number {
     let currentYear = date.getFullYear()
     let currentMonth = date.getMonth()
@@ -29,6 +44,11 @@ function GetLastDate(date: Date):number {
     return lastDate.getDate()
 }
 
+/**
+ * Gets all the date objects associated with the month
+ * @param effectiveMonth The month + year used, wrapped in a date object
+ * @returns An array of JSX elements, one for each day
+ */
 function GetDateObjects(effectiveMonth: Date):JSX.Element[]{
     let output = new Array<JSX.Element>
     for(let i = 1; i <= GetLastDate(effectiveMonth); i++){
