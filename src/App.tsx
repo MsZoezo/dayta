@@ -2,7 +2,7 @@ import CalendarLayout from "./layouts/CalendarViewLayout";
 
 function App() {
     return (
-        <CalendarLayout/>
+        <CalendarLayout />
     );
 }
 
