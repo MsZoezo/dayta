@@ -1,9 +1,9 @@
-import "../../SharedStyling/WeekFormating.css"
-import SingleDate from "./SingleDate/SingleDate"
-import StartOfMonthBuffer from "./StartOfMonthBuffer/StartOfMonthBuffer"
+import "../../SharedStyling/WeekFormating.css";
+import SingleDate from "./SingleDate/SingleDate";
+import StartOfMonthBuffer from "./StartOfMonthBuffer/StartOfMonthBuffer";
 
-interface Props{
-    date: Date
+interface Props {
+    date: Date;
 }
 
 /**
@@ -14,10 +14,10 @@ interface Props{
 function CalendarBody({ date }: Props) {
     return (
         <div className="weekFormat">
-            <StartOfMonthBuffer firstOfMonth={GetFirstDayOfWeek(date)}/>
+            <StartOfMonthBuffer firstOfMonth={GetFirstDayOfWeek(date)} />
             {GetDateObjects(date)}
         </div>
-    )
+    );
 }
 
 /**
@@ -26,9 +26,9 @@ function CalendarBody({ date }: Props) {
  * @returns A number representing the weekday of the first day in the month,
  * per Date object format
  */
-function GetFirstDayOfWeek(date: Date):number {
-    let tempDate = new Date(date)
-    tempDate.setDate(1)
+function GetFirstDayOfWeek(date: Date): number {
+    const tempDate = new Date(date);
+    tempDate.setDate(1);
     return tempDate.getDay();
 }
 /**
@@ -36,11 +36,11 @@ function GetFirstDayOfWeek(date: Date):number {
  * @param date The month + year used, wrapped in a date object
  * @returns The number of the last date of the month
  */
-function GetLastDate(date: Date):number {
-    let currentYear = date.getFullYear()
-    let currentMonth = date.getMonth()
-    let lastDate = new Date(currentYear,currentMonth + 1, 0)
-    return lastDate.getDate()
+function GetLastDate(date: Date): number {
+    const currentYear = date.getFullYear();
+    const currentMonth = date.getMonth();
+    const lastDate = new Date(currentYear, currentMonth + 1, 0);
+    return lastDate.getDate();
 }
 
 /**
@@ -48,14 +48,14 @@ function GetLastDate(date: Date):number {
  * @param effectiveMonth The month + year used, wrapped in a date object
  * @returns An array of JSX elements, one for each day
  */
-function GetDateObjects(effectiveMonth: Date):JSX.Element[]{
-    let output = new Array<JSX.Element>
-    for(let i = 1; i <= GetLastDate(effectiveMonth); i++){
-        let currentDate = new Date(effectiveMonth)
-        currentDate.setDate(i)
-        output.push(<SingleDate date={currentDate}/>);
+function GetDateObjects(effectiveMonth: Date): JSX.Element[] {
+    const output = new Array<JSX.Element>();
+    for (let i = 1; i <= GetLastDate(effectiveMonth); i++) {
+        const currentDate = new Date(effectiveMonth);
+        currentDate.setDate(i);
+        output.push(<SingleDate date={currentDate} />);
     }
-    return output
+    return output;
 }
 
 export default CalendarBody;
