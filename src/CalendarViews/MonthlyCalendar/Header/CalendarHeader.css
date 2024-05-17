@@ -1,0 +1,22 @@
+#DateHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-width: 0;
+    border-color: black;
+    border-style: solid;
+    border-bottom-width: 2px;
+    font-size: x-large;
+}
+
+#DateHeader > * {
+    margin: 5px;
+}
+
+.MonthChanger {
+    padding: 5px;
+}
+
+.MonthChanger:hover {
+    cursor: pointer;
+}
