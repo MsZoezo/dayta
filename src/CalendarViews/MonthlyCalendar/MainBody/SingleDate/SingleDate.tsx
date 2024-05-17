@@ -6,7 +6,7 @@ interface Props{
  * @param props The necessary information to be passed in
  * @returns A JSX element representing the day.
  */
-function SingleDate({date}: Props){
+function SingleDate({ date }: Props){
     return <h2 className="Date">
         {date.getDate()}
     </h2>

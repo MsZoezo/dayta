@@ -11,7 +11,7 @@ interface Props{
  * @param props The props used to recreate the element
  * @returns A JSX copy of the body of the monthly view
  */
-function CalendarBody({date}: Props) {
+function CalendarBody({ date }: Props) {
     return (
         <div className="weekFormat">
             <StartOfMonthBuffer firstOfMonth={GetFirstDayOfWeek(date)}/>
