@@ -38,4 +38,3 @@ jobs:
       - name: Run ESLint
         run: npx eslint src
           --config eslint.config.js
-        continue-on-error: true
