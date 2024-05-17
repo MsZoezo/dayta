@@ -12,4 +12,4 @@ function CalendarLayout() {
     );
 }
 
-export default CalendarLayout
+export default CalendarLayout;
