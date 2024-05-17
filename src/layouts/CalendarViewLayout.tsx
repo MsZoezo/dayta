@@ -7,7 +7,7 @@ function CalendarLayout() {
         <div className="Layout">
             <ControlPanel />
             <main>
-                <MonthlyCalandar/>
+                <MonthlyCalandar />
             </main>
         </div>
     );
