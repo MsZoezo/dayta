@@ -1,0 +1,16 @@
+.settings__layout {
+    display: grid;
+    grid-template-columns: 20rem auto;
+    grid-template-rows: auto;
+
+    height: calc(100vh - 2rem);
+    margin: 1rem;
+    
+    border-radius: 8px;
+
+    background: var(--color-accent-bg);
+
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+    overflow-y: auto;
+}
