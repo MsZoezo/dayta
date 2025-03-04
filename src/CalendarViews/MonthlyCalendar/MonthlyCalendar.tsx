@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { createSignal } from 'solid-js'
 import CalendarHeader from "./Header/CalendarHeader"
 import CalendarBody from "./MainBody/MainBody";
 import DayLabels from "../Components/DayLabels/DayLabels";
@@ -8,10 +8,11 @@ import DayLabels from "../Components/DayLabels/DayLabels";
  * @returns A JSX element for a monthly calendar
  */
 function MonthlyCalandar() {
-    let [date, setDate] = useState(new Date())
+    const [date, setDate] = createSignal(new Date())
     
     function ChangeMonth(offset: number){
-        setDate(new Date(date.getFullYear(), date.getMonth() + offset))
+
+        setDate(new Date(date().getFullYear(), date().getMonth() + offset))
     }
     
     return (
