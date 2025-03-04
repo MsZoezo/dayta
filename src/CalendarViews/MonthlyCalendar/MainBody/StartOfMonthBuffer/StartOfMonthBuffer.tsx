@@ -1,5 +1,7 @@
+import { Accessor, Show } from "solid-js"
+
 interface Props {
-    firstOfMonth: number
+    monthToLoad: Accessor<Date>
 }
 
 /**
@@ -8,13 +10,24 @@ interface Props {
  * @returns If the first day is a sunday, an empty element. 
  *          Otherwise, a buffer element between sunday and the first date.
  */
-function StartOfMonthBuffer({ firstOfMonth }: Props){
-    if (firstOfMonth == 0) return <></>
+function StartOfMonthBuffer({ monthToLoad }: Props){
     return (
-        <div id="StartOfMonthBuffer" style={{gridColumnEnd: firstOfMonth + 1}}>
-
+        <Show when={GetFirstDayOfMonth(monthToLoad()) > 0}>
+        <div id="StartOfMonthBuffer" style={{"grid-column": "1 / span " + GetFirstDayOfMonth(monthToLoad())}}>
         </div>
+        </Show>
     )
 }
 
+/**
+ * Gets the first weekday of the month
+ * @param date The month + year used, wrapped in a date object
+ * @returns A number representing the weekday of the first day in the month,
+ * per Date object format
+ */
+function GetFirstDayOfMonth(date: Date):number {
+    let tempDate = new Date(date)
+    tempDate.setDate(1)
+    return tempDate.getDay();
+}
 export default StartOfMonthBuffer

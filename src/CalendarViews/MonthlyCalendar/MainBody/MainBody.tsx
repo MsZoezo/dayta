@@ -1,9 +1,10 @@
+import { Accessor } from "solid-js"
 import "../../SharedStyling/WeekFormating.css"
 import SingleDate from "./SingleDate/SingleDate"
 import StartOfMonthBuffer from "./StartOfMonthBuffer/StartOfMonthBuffer"
 
 interface Props{
-    date: Date
+    date: Accessor<Date>
 }
 
 /**
@@ -13,24 +14,13 @@ interface Props{
  */
 function CalendarBody({ date }: Props) {
     return (
-        <div className="weekFormat">
-            <StartOfMonthBuffer firstOfMonth={GetFirstDayOfWeek(date)}/>
-            {GetDateObjects(date)}
+        <div class="weekFormat">
+            <StartOfMonthBuffer monthToLoad={date}/>
+            {GetDateObjects(date())}
         </div>
     )
 }
 
-/**
- * Gets the first weekday of the month
- * @param date The month + year used, wrapped in a date object
- * @returns A number representing the weekday of the first day in the month,
- * per Date object format
- */
-function GetFirstDayOfWeek(date: Date):number {
-    let tempDate = new Date(date)
-    tempDate.setDate(1)
-    return tempDate.getDay();
-}
 /**
  * Gets the last date of the month
  * @param date The month + year used, wrapped in a date object
