@@ -1,10 +1,10 @@
-import { Accessor } from "solid-js"
-import "../../SharedStyling/WeekFormating.css"
-import SingleDate from "./SingleDate/SingleDate"
-import StartOfMonthBuffer from "./StartOfMonthBuffer/StartOfMonthBuffer"
+import { Accessor, JSXElement } from "solid-js";
+import "../../SharedStyling/WeekFormating.css";
+import SingleDate from "./SingleDate/SingleDate";
+import StartOfMonthBuffer from "./StartOfMonthBuffer/StartOfMonthBuffer";
 
-interface Props{
-    date: Accessor<Date>
+interface Props {
+    date: Accessor<Date>;
 }
 
 /**
@@ -15,10 +15,10 @@ interface Props{
 function CalendarBody({ date }: Props) {
     return (
         <div class="weekFormat">
-            <StartOfMonthBuffer monthToLoad={date}/>
+            <StartOfMonthBuffer monthToLoad={date} />
             {GetDateObjects(date())}
         </div>
-    )
+    );
 }
 
 /**
@@ -26,11 +26,11 @@ function CalendarBody({ date }: Props) {
  * @param date The month + year used, wrapped in a date object
  * @returns The number of the last date of the month
  */
-function GetLastDate(date: Date):number {
-    let currentYear = date.getFullYear()
-    let currentMonth = date.getMonth()
-    let lastDate = new Date(currentYear,currentMonth + 1, 0)
-    return lastDate.getDate()
+function GetLastDate(date: Date): number {
+    const currentYear = date.getFullYear();
+    const currentMonth = date.getMonth();
+    const lastDate = new Date(currentYear, currentMonth + 1, 0);
+    return lastDate.getDate();
 }
 
 /**
@@ -38,12 +38,12 @@ function GetLastDate(date: Date):number {
  * @param effectiveMonth The month + year used, wrapped in a date object
  * @returns An array of JSX elements, one for each day
  */
-function GetDateObjects(effectiveMonth: Date):JSX.Element[]{
-    let output = new Array<JSX.Element>
-    for(let i = 1; i <= GetLastDate(effectiveMonth); i++){
-        let currentDate = new Date(effectiveMonth)
-        currentDate.setDate(i)
-        output.push(<SingleDate date={currentDate}/>);
+function GetDateObjects(effectiveMonth: Date):JSXElement[]{
+    const output = new Array<JSXElement>();
+    for (let i = 1; i <= GetLastDate(effectiveMonth); i++) {
+        const currentDate = new Date(effectiveMonth);
+        currentDate.setDate(i);
+        output.push(<SingleDate date={currentDate} />);
     }
     return output
 }

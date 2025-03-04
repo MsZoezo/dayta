@@ -8,7 +8,7 @@ import DayLabels from "../Components/DayLabels/DayLabels";
  * @returns A JSX element for a monthly calendar
  */
 function MonthlyCalandar() {
-    let [date, setDate] = createSignal(new Date())
+    const [date, setDate] = createSignal(new Date())
     
     function ChangeMonth(offset: number){
 
