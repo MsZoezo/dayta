@@ -1,3 +1,5 @@
+import { JSXElement } from "solid-js"
+
 interface Props{
     date: Date
 }
@@ -6,8 +8,8 @@ interface Props{
  * @param props The necessary information to be passed in
  * @returns A JSX element representing the day.
  */
-function SingleDate({ date }: Props){
-    return <h2 className="Date">
+function SingleDate({ date }: Props): JSXElement{
+    return <h2 class="Date">
         {date.getDate()}
     </h2>
 }

@@ -1,7 +1,8 @@
 import "./CalendarHeader.css"
+import { Accessor, JSXElement } from "solid-js";
 
 interface Props {
-    date: Date
+    date: Accessor<Date>
     changeMonthYear: (a: number)=> void;
 }
 
@@ -10,11 +11,11 @@ interface Props {
  * @param props The information necessary to create the header
  * @returns a JSX element for the header 
  */
-function CalendarHeader({ date, changeMonthYear }: Props) {
+function CalendarHeader({ date, changeMonthYear }: Props): JSXElement {
     return (<header id="DateHeader">
-        <a className={"MonthChanger"} onClick={() => changeMonthYear(-1)}>{"<"}</a>
-        <p>{date.toLocaleString(undefined,{month: "long", year:"numeric"})}</p>
-        <a className={"MonthChanger"} onClick={() => changeMonthYear(1)}>{">"}</a>
+        <a class={"MonthChanger"} onClick={() => changeMonthYear(-1)}>{"<"}</a>
+        <p>{date().toLocaleString(undefined,{month: "long", year:"numeric"})}</p>
+        <a class={"MonthChanger"} onClick={() => changeMonthYear(1)}>{">"}</a>
     </header>)
 }
 
